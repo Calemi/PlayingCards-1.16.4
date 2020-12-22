@@ -1,27 +1,20 @@
 modLoader="javafml"
-
 loaderVersion="[31,)"
-
-issueTrackerURL="http://my.issue.tracker/"
+license="GNU General Public License v3.0"
 
 [[mods]]
+    modId="playingcards"
+    namespace="playingcards"
+    version="1.0.0"
+    displayName="Playing Cards"
+    authors="Calemi, Kryto627"
+    description='''
+    Adds playing cards, poker chips, and more!
+    '''
 
-modId="playingcards"
-
-version="1.15.2-1.0.3"
-
-displayName="Playing Cards"
-
-updateJSONURL="http://myurl.me/"
-
-displayURL=""
-
-logoFile=""
-
-credits="Kryto627 for helping with some code."
-
-authors="Calemi"
-
-description='''
-Adds playing cards, poker chips, and more!
-'''
+[[dependencies.cspirit]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
+    ordering="NONE"
+    side="BOTH"
