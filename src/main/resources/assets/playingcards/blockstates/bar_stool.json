@@ -1,0 +1,74 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": 0
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool"
+      }
+    },
+    {
+      "when": {
+        "facing": 1
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool_diagonal"
+      }
+    },
+    {
+      "when": {
+        "facing": 2
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": 3
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool_diagonal",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": 4
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": 5
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool_diagonal",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": 6
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": 7
+      },
+      "apply": {
+        "model": "playingcards:block/bar_stool_diagonal",
+        "y": 270
+      }
+    }
+  ]
+}

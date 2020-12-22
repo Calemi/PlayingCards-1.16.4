@@ -1,0 +1,20 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "playingcards:models/poker_table",
+		"particle": "playingcards:models/poker_table"
+	},
+	"elements": [
+		{
+			"name": "edge",
+			"from": [0, 15, 13],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 15, 8]},
+			"faces": {
+				"north": {"uv": [11, 9, 16, 9.5], "texture": "#0"},
+				"south": {"uv": [11, 8, 16, 8.5], "texture": "#0"},
+				"up": {"uv": [8, 8, 16, 9.5], "texture": "#0"}
+			}
+		}
+	]
+}

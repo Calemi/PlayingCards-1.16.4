@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "playingcards:models/poker_table",
+		"particle": "playingcards:models/poker_table"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [0, 0, 0],
+			"to": [16, 15, 16],
+			"faces": {
+				"north": {"uv": [0, 0.5, 8, 8], "texture": "#0"},
+				"east": {"uv": [0, 0.5, 8, 8], "texture": "#0"},
+				"south": {"uv": [0, 0.5, 8, 8], "texture": "#0"},
+				"west": {"uv": [0, 0.5, 8, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#0"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#0"}
+			}
+		}
+	]
+}

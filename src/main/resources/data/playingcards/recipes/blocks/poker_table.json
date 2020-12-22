@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "tag" : "minecraft:planks"
+    },
+    "W": {
+      "item": "minecraft:green_carpet"
+    }
+  },
+  "result": {
+    "item": "playingcards:poker_table",
+    "count": 4
+  }
+}

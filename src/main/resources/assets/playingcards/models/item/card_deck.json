@@ -1,0 +1,9 @@
+{
+	"parent": "item/generated",
+	"overrides": [
+		{"predicate": {"skin": 0},  "model": "playingcards:item/card_deck_blue"},
+		{"predicate": {"skin": 1},  "model": "playingcards:item/card_deck_red"},
+		{"predicate": {"skin": 2},  "model": "playingcards:item/card_deck_black"},
+		{"predicate": {"skin": 3},  "model": "playingcards:item/card_deck_pig"}
+	]
+}

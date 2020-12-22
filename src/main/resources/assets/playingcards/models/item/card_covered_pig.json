@@ -1,0 +1,6 @@
+{
+	"parent": "playingcards:item/card_base",
+	"textures": {
+		"0": "playingcards:items/cards/card_cover_pig"
+	}
+}

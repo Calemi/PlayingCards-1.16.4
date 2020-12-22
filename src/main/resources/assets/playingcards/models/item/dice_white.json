@@ -1,0 +1,7 @@
+{
+	"parent": "playingcards:item/dice_base",
+	"textures": {
+		"0": "playingcards:models/dice_white",
+		"particle": "playingcards:models/dice_white"
+	}
+}

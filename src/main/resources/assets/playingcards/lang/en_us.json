@@ -1,0 +1,19 @@
+{
+
+  "block.playingcards.poker_table": "Poker Table",
+  "block.playingcards.bar_stool": "Bar Stool",
+
+  "item.playingcards.card_deck": "Card Deck",
+  "item.playingcards.card_covered": "Covered Card",
+  "item.playingcards.card": "Playing Card",
+
+  "item.playingcards.poker_chip_white": "White Poker Chip",
+  "item.playingcards.poker_chip_red": "Red Poker Chip",
+  "item.playingcards.poker_chip_blue": "Blue Poker Chip",
+  "item.playingcards.poker_chip_green": "Green Poker Chip",
+  "item.playingcards.poker_chip_black": "Black Poker Chip",
+
+  "item.playingcards.dice_white": "White Dice",
+
+  "itemGroup.playingcards.tabMain": "Playing Cards"
+}

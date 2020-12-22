@@ -1,0 +1,70 @@
+{
+	"parent": "playingcards:item/card_base",
+	"overrides": [
+
+		{"predicate": {"value": 0},  "model": "playingcards:item/card_ace_spades"},
+		{"predicate": {"value": 1},  "model": "playingcards:item/card_ace_clubs"},
+		{"predicate": {"value": 2},  "model": "playingcards:item/card_ace_diamonds"},
+		{"predicate": {"value": 3},  "model": "playingcards:item/card_ace_hearts"},
+
+		{"predicate": {"value": 4},  "model": "playingcards:item/card_2_spades"},
+		{"predicate": {"value": 5},  "model": "playingcards:item/card_2_clubs"},
+		{"predicate": {"value": 6},  "model": "playingcards:item/card_2_diamonds"},
+		{"predicate": {"value": 7},  "model": "playingcards:item/card_2_hearts"},
+
+		{"predicate": {"value": 8},  "model": "playingcards:item/card_3_spades"},
+		{"predicate": {"value": 9},  "model": "playingcards:item/card_3_clubs"},
+		{"predicate": {"value": 10}, "model": "playingcards:item/card_3_diamonds"},
+		{"predicate": {"value": 11}, "model": "playingcards:item/card_3_hearts"},
+
+		{"predicate": {"value": 12}, "model": "playingcards:item/card_4_spades"},
+		{"predicate": {"value": 13}, "model": "playingcards:item/card_4_clubs"},
+		{"predicate": {"value": 14}, "model": "playingcards:item/card_4_diamonds"},
+		{"predicate": {"value": 15}, "model": "playingcards:item/card_4_hearts"},
+
+		{"predicate": {"value": 16}, "model": "playingcards:item/card_5_spades"},
+		{"predicate": {"value": 17}, "model": "playingcards:item/card_5_clubs"},
+		{"predicate": {"value": 18}, "model": "playingcards:item/card_5_diamonds"},
+		{"predicate": {"value": 19}, "model": "playingcards:item/card_5_hearts"},
+
+		{"predicate": {"value": 20}, "model": "playingcards:item/card_6_spades"},
+		{"predicate": {"value": 21}, "model": "playingcards:item/card_6_clubs"},
+		{"predicate": {"value": 22}, "model": "playingcards:item/card_6_diamonds"},
+		{"predicate": {"value": 23}, "model": "playingcards:item/card_6_hearts"},
+
+		{"predicate": {"value": 24}, "model": "playingcards:item/card_7_spades"},
+		{"predicate": {"value": 25}, "model": "playingcards:item/card_7_clubs"},
+		{"predicate": {"value": 26}, "model": "playingcards:item/card_7_diamonds"},
+		{"predicate": {"value": 27}, "model": "playingcards:item/card_7_hearts"},
+
+		{"predicate": {"value": 28}, "model": "playingcards:item/card_8_spades"},
+		{"predicate": {"value": 29}, "model": "playingcards:item/card_8_clubs"},
+		{"predicate": {"value": 30}, "model": "playingcards:item/card_8_diamonds"},
+		{"predicate": {"value": 31}, "model": "playingcards:item/card_8_hearts"},
+
+		{"predicate": {"value": 32}, "model": "playingcards:item/card_9_spades"},
+		{"predicate": {"value": 33}, "model": "playingcards:item/card_9_clubs"},
+		{"predicate": {"value": 34}, "model": "playingcards:item/card_9_diamonds"},
+		{"predicate": {"value": 35}, "model": "playingcards:item/card_9_hearts"},
+
+		{"predicate": {"value": 36}, "model": "playingcards:item/card_10_spades"},
+		{"predicate": {"value": 37}, "model": "playingcards:item/card_10_clubs"},
+		{"predicate": {"value": 38}, "model": "playingcards:item/card_10_diamonds"},
+		{"predicate": {"value": 39}, "model": "playingcards:item/card_10_hearts"},
+
+		{"predicate": {"value": 40}, "model": "playingcards:item/card_jack_spades"},
+		{"predicate": {"value": 41}, "model": "playingcards:item/card_jack_clubs"},
+		{"predicate": {"value": 42}, "model": "playingcards:item/card_jack_diamonds"},
+		{"predicate": {"value": 43}, "model": "playingcards:item/card_jack_hearts"},
+
+		{"predicate": {"value": 44}, "model": "playingcards:item/card_queen_spades"},
+		{"predicate": {"value": 45}, "model": "playingcards:item/card_queen_clubs"},
+		{"predicate": {"value": 46}, "model": "playingcards:item/card_queen_diamonds"},
+		{"predicate": {"value": 47}, "model": "playingcards:item/card_queen_hearts"},
+
+		{"predicate": {"value": 48}, "model": "playingcards:item/card_king_spades"},
+		{"predicate": {"value": 49}, "model": "playingcards:item/card_king_clubs"},
+		{"predicate": {"value": 50}, "model": "playingcards:item/card_king_diamonds"},
+		{"predicate": {"value": 51}, "model": "playingcards:item/card_king_hearts"}
+	]
+}

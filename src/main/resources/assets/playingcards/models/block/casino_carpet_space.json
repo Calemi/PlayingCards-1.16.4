@@ -1,0 +1,7 @@
+{
+  "parent": "block/carpet",
+  "textures": {
+    "particle": "playingcards:blocks/casino_carpet_space",
+    "wool": "playingcards:blocks/casino_carpet_space"
+  }
+}
