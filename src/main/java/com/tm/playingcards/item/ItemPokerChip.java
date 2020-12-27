@@ -67,9 +67,12 @@ public class ItemPokerChip extends ItemBase {
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag) {
 
         CompoundNBT nbt = ItemHelper.getNBT(stack);
-        UUID ownerID = nbt.getUniqueId("OwnerID");
 
-        tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Owner: " + TextFormatting.GOLD + (ownerID.getLeastSignificantBits() != 0 ? nbt.getString("OwnerName") : "Not set")));
+        if (nbt.hasUniqueId("OwnerID")) {
+            tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Owner: " + TextFormatting.GOLD + nbt.getString("OwnerName")));
+        }
+
+        else tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Owner: " + TextFormatting.GOLD + "Not set"));
 
         tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Value (1): " + TextFormatting.GOLD + value));
 
@@ -86,11 +89,9 @@ public class ItemPokerChip extends ItemBase {
         if (player.isCrouching()) {
 
             UnitChatMessage unitMessage = getUnitMessage(player);
-
             CompoundNBT nbt = ItemHelper.getNBT(heldItem);
-            UUID ownerID = nbt.getUniqueId("OwnerID");
 
-            if (ownerID.getLeastSignificantBits() == 0) {
+            if (!nbt.hasUniqueId("OwnerID")) {
 
                 nbt.putUniqueId("OwnerID", player.getUniqueID());
                 nbt.putString("OwnerName", player.getDisplayName().getString());
@@ -116,16 +117,15 @@ public class ItemPokerChip extends ItemBase {
             if (!player.isCrouching()) {
 
                 World world = context.getWorld();
-
                 Location location = new Location(world, context.getPos());
 
                 UnitChatMessage unitMessage = getUnitMessage(player);
-
                 CompoundNBT nbt = ItemHelper.getNBT(context.getItem());
-                UUID ownerID = nbt.getUniqueId("OwnerID");
-                String ownerName = nbt.getString("OwnerName");
 
-                if (ownerID.getLeastSignificantBits() != 0) {
+                if (nbt.hasUniqueId("OwnerID")) {
+
+                    UUID ownerID = nbt.getUniqueId("OwnerID");
+                    String ownerName = nbt.getString("OwnerName");
 
                     if (location.getBlock().hasTileEntity(location.getBlockState())) {
 
@@ -136,6 +136,7 @@ public class ItemPokerChip extends ItemBase {
                             TileEntityPokerTable pokerTable = (TileEntityPokerTable) tileEntity;
 
                             if (!ownerID.equals(pokerTable.getOwnerID())) {
+
                                 if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, "The owner of your chip(s) do not match the owner of the table. Cannot place!");
                                 return ActionResultType.PASS;
                             }

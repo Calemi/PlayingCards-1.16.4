@@ -5,7 +5,7 @@ license="GNU General Public License v3.0"
 [[mods]]
     modId="playingcards"
     namespace="playingcards"
-    version="1.0.0"
+    version="1.0.1"
     displayName="Playing Cards"
     authors="Calemi, Kryto627"
     description='''

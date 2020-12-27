@@ -2,6 +2,7 @@ package com.tm.playingcards.entity.base;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.MoverType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -87,6 +88,22 @@ public abstract class EntityStacked extends Entity {
     @Override
     public void tick() {
         super.tick();
+
+        if (world.isRemote) {
+            noClip = false;
+        }
+
+        else {
+            noClip = !world.hasNoCollisions(this);
+
+            if (noClip) {
+                setMotion(getMotion().add(0.0D, 0.02D, 0.0D));
+            }
+
+            else setMotion(getMotion().add(0.0D, -0.04D, 0.0D));
+        }
+
+        move(MoverType.SELF, getMotion());
 
         Vector3d pos = getPositionVec();
         double size = 0.2D;

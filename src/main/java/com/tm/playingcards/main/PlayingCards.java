@@ -31,6 +31,8 @@ public class PlayingCards {
 
     public PlayingCards() {
 
+        instance = this;
+
         MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         MOD_EVENT_BUS.addListener(this::onCommonSetup);
         MOD_EVENT_BUS.addListener(this::onClientSetup);
@@ -42,7 +44,6 @@ public class PlayingCards {
         InitItems.init();
         InitRecipes.RECIPES.register(MOD_EVENT_BUS);
 
-        instance = this;
         MinecraftForge.EVENT_BUS.register(this);
     }
 

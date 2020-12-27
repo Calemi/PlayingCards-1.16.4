@@ -71,39 +71,42 @@ public class EntityPokerChip extends EntityStacked {
 
             CompoundNBT nbt = ItemHelper.getNBT(stack);
 
-            UUID ownerID = nbt.getUniqueId("OwnerID");
+            if (nbt.hasUniqueId("OwnerID")) {
 
-            if (ownerID.equals(getOwnerUUID())) {
+                UUID ownerID = nbt.getUniqueId("OwnerID");
 
-                if (player.isCrouching()) {
+                if (ownerID.equals(getOwnerUUID())) {
 
-                    while (true) {
+                    if (player.isCrouching()) {
 
-                        if (getStackAmount() < MAX_STACK_SIZE && stack.getCount() > 0) {
+                        while (true) {
+
+                            if (getStackAmount() < MAX_STACK_SIZE && stack.getCount() > 0) {
+                                ItemPokerChip chip = (ItemPokerChip) stack.getItem();
+                                addToTop(chip.getChipID());
+                                stack.shrink(1);
+                            }
+
+                            else break;
+                        }
+                    }
+
+                    else {
+
+                        if (getStackAmount() < MAX_STACK_SIZE) {
                             ItemPokerChip chip = (ItemPokerChip) stack.getItem();
                             addToTop(chip.getChipID());
                             stack.shrink(1);
                         }
 
-                        else break;
+                        else {
+                            if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "The stack is full!", player);
+                        }
                     }
                 }
 
-                else {
-
-                    if (getStackAmount() < MAX_STACK_SIZE) {
-                        ItemPokerChip chip = (ItemPokerChip) stack.getItem();
-                        addToTop(chip.getChipID());
-                        stack.shrink(1);
-                    }
-
-                    else {
-                        if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "The stack is full!", player);
-                    }
-                }
+                else if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "Owner does not match the one of the stack!", player);
             }
-
-            else if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "Owner does not match the one of the stack!", player);
         }
 
         else takeChip(player);
