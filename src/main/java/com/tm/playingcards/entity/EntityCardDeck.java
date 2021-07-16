@@ -18,6 +18,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
@@ -83,7 +84,7 @@ public class EntityCardDeck extends EntityStacked {
                 return player.getHeldItemMainhand().isEmpty() ? ActionResultType.SUCCESS : ActionResultType.FAIL;
             }
 
-            else if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "Out of cards!", player);
+            else if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, new TranslationTextComponent("message.stack_empty"), player);
         }
 
         return ActionResultType.FAIL;
@@ -104,7 +105,7 @@ public class EntityCardDeck extends EntityStacked {
                 remove();
             } else {
                 shuffleStack();
-                if (world.isRemote) ChatHelper.printModMessage(TextFormatting.GREEN, "You shuffled the deck", player);
+                if (world.isRemote) ChatHelper.printModMessage(TextFormatting.GREEN, new TranslationTextComponent("message.stack_shuffled"), player);
             }
 
             return true;

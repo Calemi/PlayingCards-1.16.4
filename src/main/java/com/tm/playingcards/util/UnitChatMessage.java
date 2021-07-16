@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class UnitChatMessage {
 
@@ -15,17 +16,15 @@ public class UnitChatMessage {
         this.players = players;
     }
 
-    public void printMessage(TextFormatting format, String message) {
+    public void printMessage(TextFormatting format, TranslationTextComponent message) {
 
         for (Entity player : players) {
-
-            StringTextComponent componentString = new StringTextComponent(getUnitName() + (format + message));
-            player.sendMessage(componentString, Util.DUMMY_UUID);
+            player.sendMessage(new StringTextComponent("[").mergeStyle(TextFormatting.WHITE).append(getUnitName().appendString("] ")).append(message.mergeStyle(format)), Util.DUMMY_UUID);
         }
     }
 
-    private String getUnitName() {
-        return "[" + unitName + "] ";
+    private TranslationTextComponent getUnitName() {
+        return new TranslationTextComponent("unitname." + unitName);
     }
 
 }

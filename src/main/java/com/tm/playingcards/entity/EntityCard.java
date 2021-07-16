@@ -16,6 +16,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 import com.tm.playingcards.init.InitEntityTypes;
@@ -124,7 +125,7 @@ public class EntityCard extends EntityStacked {
             }
 
             else {
-                if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, "The stack is full!", player);
+                if (world.isRemote) ChatHelper.printModMessage(TextFormatting.RED, new TranslationTextComponent("message.stack_full"), player);
             }
         }
 

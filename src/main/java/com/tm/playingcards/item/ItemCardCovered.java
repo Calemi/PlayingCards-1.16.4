@@ -19,8 +19,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -38,7 +38,7 @@ public class ItemCardCovered extends ItemBase {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         CompoundNBT nbt = ItemHelper.getNBT(stack);
-        tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Cover: " + TextFormatting.AQUA + CardHelper.CARD_SKIN_NAMES[nbt.getByte("SkinID")]));
+        tooltip.add(new TranslationTextComponent("lore.cover").appendString(" ").mergeStyle(TextFormatting.GRAY).append(new TranslationTextComponent(CardHelper.CARD_SKIN_NAMES[nbt.getByte("SkinID")]).mergeStyle(TextFormatting.AQUA)));
     }
 
     public void flipCard(ItemStack heldItem, LivingEntity entity) {
@@ -74,26 +74,30 @@ public class ItemCardCovered extends ItemBase {
                 PlayerEntity player = (PlayerEntity) entity;
                 BlockPos pos = player.getPosition();
 
-                UUID id = ItemHelper.getNBT(stack).getUniqueId("UUID");
+                CompoundNBT nbt = ItemHelper.getNBT(stack);
 
-                if (id.getLeastSignificantBits() == 0) {
-                    return;
-                }
+                if (nbt.hasUniqueId("UUID")) {
+                    UUID id = ItemHelper.getNBT(stack).getUniqueId("UUID");
 
-                List<EntityCardDeck> closeDecks = world.getEntitiesWithinAABB(EntityCardDeck.class, new AxisAlignedBB(pos.getX() - 20, pos.getY() - 20, pos.getZ() - 20, pos.getX() + 20, pos.getY() + 20, pos.getZ() + 20));
-
-                boolean found = false;
-
-                for (EntityCardDeck closeDeck : closeDecks) {
-
-                    if (closeDeck.getUniqueID().equals(id)) {
-                        found = true;
-                        break;
+                    if (id.getLeastSignificantBits() == 0) {
+                        return;
                     }
-                }
 
-                if (!found) {
-                    player.inventory.getStackInSlot(itemSlot).shrink(1);
+                    List<EntityCardDeck> closeDecks = world.getEntitiesWithinAABB(EntityCardDeck.class, new AxisAlignedBB(pos.getX() - 20, pos.getY() - 20, pos.getZ() - 20, pos.getX() + 20, pos.getY() + 20, pos.getZ() + 20));
+
+                    boolean found = false;
+
+                    for (EntityCardDeck closeDeck : closeDecks) {
+
+                        if (closeDeck.getUniqueID().equals(id)) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        player.inventory.getStackInSlot(itemSlot).shrink(1);
+                    }
                 }
             }
         }

@@ -6,10 +6,12 @@ import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public class CardHelper {
 
-    public static final String[] CARD_SKIN_NAMES = {"Classic Blue", "Classic Red", "Classic Black", "Pig Variant"};
+    public static final String[] CARD_SKIN_NAMES = {"card.skin.blue", "card.skin.red", "card.skin.black", "card.skin.pig"};
 
     public static void renderItem(ItemStack stack, double offsetX, double offsetY, double offsetZ, MatrixStack matrixStack, IRenderTypeBuffer buffer, int combinedLight) {
         matrixStack.push();
@@ -18,9 +20,9 @@ public class CardHelper {
         matrixStack.pop();
     }
 
-    public static String getCardName(int id) {
+    public static IFormattableTextComponent getCardName(int id) {
 
-        String type = "Ace";
+        String type = "card.ace";
 
         int typeID = id / 4 + 1;
 
@@ -29,39 +31,39 @@ public class CardHelper {
         }
 
         if (typeID > 10) {
-            type = "Jack";
+            type = "card.jack";
 
             if (typeID > 11) {
-                type = "Queen";
+                type = "card.queen";
 
                 if (typeID > 12) {
-                    type = "King";
+                    type = "card.king";
                 }
             }
         }
 
-        String suite = "Spades";
+        String suite = "card.spades";
 
         int suiteID = id % 4;
 
         switch(suiteID) {
 
             case 1: {
-                suite = "Clubs";
+                suite = "card.clubs";
                 break;
             }
 
             case 2: {
-                suite = "Diamonds";
+                suite = "card.diamonds";
                 break;
             }
 
             case 3: {
-                suite = "Hearts";
+                suite = "card.hearts";
                 break;
             }
         }
 
-        return type + " of " + suite;
+        return new TranslationTextComponent(type).appendString(" ").append(new TranslationTextComponent("card.of").appendString(" ").append(new TranslationTextComponent(suite)));
     }
 }

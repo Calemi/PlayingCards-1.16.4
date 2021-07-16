@@ -1,5 +1,6 @@
 package com.tm.playingcards.item;
 
+import com.tm.playingcards.entity.EntityCardDeck;
 import com.tm.playingcards.item.base.ItemBase;
 import com.tm.playingcards.main.PlayingCards;
 import com.tm.playingcards.util.CardHelper;
@@ -13,10 +14,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import com.tm.playingcards.entity.EntityCardDeck;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -30,7 +30,7 @@ public class ItemCardDeck extends ItemBase {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         CompoundNBT nbt = ItemHelper.getNBT(stack);
-        tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Cover: " + TextFormatting.AQUA + CardHelper.CARD_SKIN_NAMES[nbt.getByte("SkinID")]));
+        tooltip.add(new TranslationTextComponent("lore.cover").appendString(" ").mergeStyle(TextFormatting.GRAY).append(new TranslationTextComponent(CardHelper.CARD_SKIN_NAMES[nbt.getByte("SkinID")]).mergeStyle(TextFormatting.AQUA)));
     }
 
     @Override

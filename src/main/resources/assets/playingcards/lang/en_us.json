@@ -15,5 +15,34 @@
 
   "item.playingcards.dice_white": "White Dice",
 
-  "itemGroup.playingcards.tabMain": "Playing Cards"
+  "lore.cover": "Cover:",
+
+  "card.ace": "Ace",
+  "card.jack": "Jack",
+  "card.queen": "Queen",
+  "card.king": "King",
+  "card.of": "of",
+  "card.spades": "Spades",
+  "card.clubs": "Clubs",
+  "card.diamonds": "Diamonds",
+  "card.hearts": "Hearts",
+
+  "card.skin.blue": "Classic Blue",
+  "card.skin.red": "Classic Red",
+  "card.skin.black": "Classic Black",
+  "card.skin.pig": "Pig Variant",
+
+  "itemGroup.playingcards.tabMain": "Playing Cards",
+
+  "message.stack_full": "The stack is full!",
+  "message.stack_empty": "Out of cards!",
+  "message.stack_shuffled": "You shuffled the deck",
+  "message.stack_owner_error": "Owner does not match the one of the stack!",
+  "message.poker_chip_owner_set": "The owner has been set to you!",
+  "message.poker_chip_owner_error": "An owner already exists!",
+  "message.poker_chip_owner_missing": "No owner found! Cannot place!",
+  "message.poker_chip_table_error": "The owner of your chip(s) do not match the owner of the table. Cannot place!",
+
+  "unitname.mod_name": "Playing Cards",
+  "unitname.poker_chip": "Poker Chip"
 }

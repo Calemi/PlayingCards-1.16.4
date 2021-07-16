@@ -22,6 +22,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -40,7 +41,7 @@ public class ItemPokerChip extends ItemBase {
     }
 
     private UnitChatMessage getUnitMessage(PlayerEntity... players) {
-        return new UnitChatMessage("Poker Chip", players);
+        return new UnitChatMessage("poker_chip", players);
     }
 
     public byte getChipID() {
@@ -96,10 +97,10 @@ public class ItemPokerChip extends ItemBase {
                 nbt.putUniqueId("OwnerID", player.getUniqueID());
                 nbt.putString("OwnerName", player.getDisplayName().getString());
 
-                if (world.isRemote) unitMessage.printMessage(TextFormatting.GREEN, "The owner has been set to you!");
+                if (world.isRemote) unitMessage.printMessage(TextFormatting.GREEN, new TranslationTextComponent("message.poker_chip_owner_set"));
             }
 
-            else if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, "An owner already exists!");
+            else if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, new TranslationTextComponent("message.poker_chip_owner_error"));
 
             return new ActionResult<>(ActionResultType.SUCCESS, heldItem);
         }
@@ -137,7 +138,7 @@ public class ItemPokerChip extends ItemBase {
 
                             if (!ownerID.equals(pokerTable.getOwnerID())) {
 
-                                if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, "The owner of your chip(s) do not match the owner of the table. Cannot place!");
+                                if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, new TranslationTextComponent("message.poker_chip_table_error"));
                                 return ActionResultType.PASS;
                             }
                         }
@@ -148,7 +149,7 @@ public class ItemPokerChip extends ItemBase {
                     context.getItem().shrink(1);
                 }
 
-                else if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, "No owner found! Cannot place!");
+                else if (world.isRemote) unitMessage.printMessage(TextFormatting.RED, new TranslationTextComponent("message.poker_chip_owner_missing"));
 
                 return ActionResultType.SUCCESS;
             }
