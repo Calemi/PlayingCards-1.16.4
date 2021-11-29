@@ -97,12 +97,25 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            groupId = 'com.tm.playingcards'
+            artifactId = 'PlayingCards-1.16.4'
+            version = "1.0.1"
+            from components.java
+
+            pom {
+                name = 'Playing Cards'
+            }
         }
     }
     repositories {
         maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+
+            credentials {
+                username = "$usr"
+                password = "$pwd"
+            }
+
+            url = "https://calemi.jfrog.io/artifactory/calemi-libs-release"
         }
     }
 }
