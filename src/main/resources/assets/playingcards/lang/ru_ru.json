@@ -1,0 +1,48 @@
+{
+
+  "block.playingcards.poker_table": "Стол для Покера",
+  "block.playingcards.bar_stool": "Барный стул",
+
+  "item.playingcards.card_deck": "Колода карт",
+  "item.playingcards.card_covered": "Перевернутая карта",
+  "item.playingcards.card": "Игральная карта",
+
+  "item.playingcards.poker_chip_white": "Белая покерная фишка",
+  "item.playingcards.poker_chip_red": "Красная покерная фишка",
+  "item.playingcards.poker_chip_blue": "Синяя покерная фишка",
+  "item.playingcards.poker_chip_green": "Зелёная покерная фишка",
+  "item.playingcards.poker_chip_black": "Чёрная покерная фишка",
+
+  "item.playingcards.dice_white": "Белая игральная кость",
+
+  "lore.cover": "Покрывает:",
+
+  "card.ace": "Туз",
+  "card.jack": "Джек",
+  "card.queen": "Королева",
+  "card.king": "Король",
+  "card.of": "of",
+  "card.spades": "Пики",
+  "card.clubs": "Трефы",
+  "card.diamonds": "Алмазы",
+  "card.hearts": "Сердца",
+
+  "card.skin.blue": "Классический Синий",
+  "card.skin.red": "Классический Красный",
+  "card.skin.black": "Классический Чёрный",
+  "card.skin.pig": "Свинной Вариант",
+
+  "itemGroup.playingcards.tabMain": "Игральные Карты",
+
+  "message.stack_full": "Стак полон!",
+  "message.stack_empty": "Закончились карты!!",
+  "message.stack_shuffled": "Вы перебрали колоду",
+  "message.stack_owner_error": "Владелец не совпадает с владельцем стака!",
+  "message.poker_chip_owner_set": "Владелец был назначен вам!",
+  "message.poker_chip_owner_error": "Владелец уже существует!",
+  "message.poker_chip_owner_missing": "Владелец не найден! Не удалось разместить!",
+  "message.poker_chip_table_error": "Владелец ваших фишек не совпадает с владельцем стола. Не удалось разместить!",
+
+  "unitname.mod_name": "Игральные карты",
+  "unitname.poker_chip": "Покерная фишка"
+}
